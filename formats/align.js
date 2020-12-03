@@ -2,7 +2,8 @@ import { Attributor, ClassAttributor, Scope, StyleAttributor } from 'parchment';
 
 const config = {
   scope: Scope.BLOCK,
-  whitelist: ['right', 'center', 'justify'],
+  whitelist: ['left', 'right', 'center', 'justify'],
+  default: 'left',
 };
 
 const AlignAttribute = new Attributor('align', 'align', config);

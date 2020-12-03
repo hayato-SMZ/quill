@@ -24,7 +24,8 @@ class IndentAttributor extends ClassAttributor {
 
 const IndentClass = new IndentAttributor('indent', 'ql-indent', {
   scope: Scope.BLOCK,
-  whitelist: [1, 2, 3, 4, 5, 6, 7, 8],
+  whitelist: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  default: 0,
 });
 
 export default IndentClass;

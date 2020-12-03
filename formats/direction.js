@@ -2,7 +2,8 @@ import { Attributor, ClassAttributor, Scope, StyleAttributor } from 'parchment';
 
 const config = {
   scope: Scope.BLOCK,
-  whitelist: ['rtl'],
+  whitelist: ['ltr', 'rtl'],
+  default: ['ltr'],
 };
 
 const DirectionAttribute = new Attributor('direction', 'dir', config);

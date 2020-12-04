@@ -126,7 +126,17 @@ describe('Clipboard', function() {
       const html =
         '<div>0<br>1</div><div>2<br></div><div>3</div><div><br>4</div><div><br></div><div>5</div>';
       const delta = this.clipboard.convert({ html });
-      expect(delta).toEqual(new Delta().insert('0\n1\n2\n3\n\n4\n\n5'));
+      expect(delta).toEqual(
+        new Delta()
+          .insert('0\n')
+          .insert('1\n')
+          .insert('2\n')
+          .insert('3\n')
+          .insert('\n')
+          .insert('4\n')
+          .insert('\n')
+          .insert('5'),
+      );
     });
 
     it('empty block', function() {
@@ -170,6 +180,7 @@ describe('Clipboard', function() {
       const delta = this.clipboard.convert({
         html: '<ol><li>One</li><li class="ql-indent-1">Alpha</li></ol>',
       });
+      console.log(delta);
       expect(delta).toEqual(
         new Delta()
           .insert('One\n', { list: 'ordered' })

@@ -13,6 +13,24 @@ describe('Align', function() {
     );
   });
 
+  it('get', function() {
+    const editor = this.initialize(
+      Editor,
+      '<p>align test</p><p class="ql-align-center">0123</p>',
+    );
+    console.log('get!!!!!!!!!!!!!!!!!!!!!');
+    console.log(editor.getDelta().ops[0].insert);
+    expect(editor.getDelta()).toEqual(
+      new Delta()
+        .insert('align test\n')
+        .insert('0123')
+        .insert('\n', { align: 'center' }),
+    );
+    expect(editor.scroll.domNode).toEqualHTML(
+      '<p>align test</p><p  class="ql-align-center">0123</p>',
+    );
+  });
+
   it('remove', function() {
     const editor = this.initialize(
       Editor,

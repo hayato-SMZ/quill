@@ -31,21 +31,30 @@ describe('Editor', function() {
     it('on empty line', function() {
       const editor = this.initialize(Editor, '<p>0</p><p><br></p><p>3</p>');
       editor.insertText(2, '!');
-      expect(editor.getDelta()).toEqual(new Delta().insert('0\n!\n3\n'));
+      expect(editor.getDelta()).toEqual(
+        new Delta()
+          .insert('0\n')
+          .insert('!\n')
+          .insert('3\n'),
+      );
       expect(this.container).toEqualHTML('<p>0</p><p>!</p><p>3</p>');
     });
 
     it('end of document', function() {
       const editor = this.initialize(Editor, '<p>Hello</p>');
       editor.insertText(6, 'World!');
-      expect(editor.getDelta()).toEqual(new Delta().insert('Hello\nWorld!\n'));
+      expect(editor.getDelta()).toEqual(
+        new Delta().insert('Hello\n').insert('World!\n'),
+      );
       expect(this.container).toEqualHTML('<p>Hello</p><p>World!</p>');
     });
 
     it('end of document with newline', function() {
       const editor = this.initialize(Editor, '<p>Hello</p>');
       editor.insertText(6, 'World!\n');
-      expect(editor.getDelta()).toEqual(new Delta().insert('Hello\nWorld!\n'));
+      expect(editor.getDelta()).toEqual(
+        new Delta().insert('Hello\n').insert('World!\n'),
+      );
       expect(this.container).toEqualHTML('<p>Hello</p><p>World!</p>');
     });
 
@@ -98,6 +107,7 @@ describe('Editor', function() {
       expect(editor.getDelta()).toEqual(
         new Delta().insert('0123', { bold: true }).insert('\n\n'),
       );
+      console.log(this.container);
       expect(this.container).toEqualHTML(`
         <p><strong>0123</strong></p>
         <p><br></p>`);

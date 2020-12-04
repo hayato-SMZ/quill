@@ -36,9 +36,9 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
     "lodash.merge": "^4.5.0",
-    "parchment": "git+https://github.com/hayato-SMZ/parchment.git",
+    "parchment": "^2.0.0-dev.2",
     "path": "^0.12.7",
-    "quill-delta": "4.2.2"
+    "quill-delta": "git+https://github.com/hayato-SMZ/delta.git"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

@@ -36,9 +36,9 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
     "lodash.merge": "^4.5.0",
-    "parchment": "^2.0.0-dev.2",
+    "parchment": "file:../parchment",
     "path": "^0.12.7",
-    "quill-delta": "git+https://github.com/hayato-SMZ/delta.git"
+    "quill-delta": "file:../delta"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -47,14 +47,6 @@
     "babel-plugin-istanbul": "^6.0.0",
     "css-loader": "^3.5.1",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-import-resolver-webpack": "~0.12.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
     "highlight.js": "^9.18.1",
     "html-loader": "~1.1.0",
     "http-proxy": "^1.18.0",
